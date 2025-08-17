@@ -40,6 +40,11 @@ from '‪C:\Users\MD DANISH KHAN\OneDrive\Desktop\Customers.csv'
 delimiter','
 csv header;
 
+copy orders(Order_ID,Customer_ID,Book_ID,Order_Date,Quantity,Total_Amount)
+from '‪C:\Users\MD DANISH KHAN\OneDrive\Desktop\Orders.csv'
+delimiter ','
+csv header;
+
 copy books(Book_ID,Title,Author,Genre,Published_Year,Price,Stock)
 from '‪C:\Users\MD DANISH KHAN\OneDrive\Desktop\Books.csv'
 delimiter ','
@@ -57,7 +62,4 @@ where published_year > 1950;
 select * from customers
 where country = 'Canada';
 
-copy orders(Order_ID,Customer_ID,Book_ID,Order_Date,Quantity,Total_Amount)
-from '‪C:\Users\MD DANISH KHAN\OneDrive\Desktop\Orders.csv'
-delimiter ','
-csv header;
+
