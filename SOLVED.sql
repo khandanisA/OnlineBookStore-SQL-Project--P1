@@ -45,6 +45,18 @@ from '‪C:\Users\MD DANISH KHAN\OneDrive\Desktop\Books.csv'
 delimiter ','
 csv header;
 
+--1) Retrieve all books in the "Fiction" genre
+ select * from books
+ where genre ='Fiction';
+
+--2) Find books published after the year 1950
+select * from books
+where published_year > 1950;
+
+--3) List all customers from the Canada
+select * from customers
+where country = 'Canada';
+
 copy orders(Order_ID,Customer_ID,Book_ID,Order_Date,Quantity,Total_Amount)
 from '‪C:\Users\MD DANISH KHAN\OneDrive\Desktop\Orders.csv'
 delimiter ','
