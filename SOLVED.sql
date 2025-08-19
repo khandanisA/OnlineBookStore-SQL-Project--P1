@@ -158,6 +158,17 @@ group by o.customer_id,c.name
 order by most_spent_customer desc 
 limit 1;
 
+--9) Calculate the stock remaining after fulfilling all orders
+select b.book_id,
+       b.title,
+	   b.stock,
+	   coalesce(sum(o.quantity),0) as total_quantity_sold,
+	   coalesce(b.stock-sum(o.quantity),0) as remaining_stock
+from books b
+left join orders o on b.book_id=o.book_id
+group by b.book_id
+order by b.book_id;
 
+           --------------------------END-------------------------------
 
 
