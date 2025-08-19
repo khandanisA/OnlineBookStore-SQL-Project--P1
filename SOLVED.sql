@@ -113,19 +113,10 @@ from books
 where genre='Fantasy';
 
 --3) List customers who have placed at least 2 orders
-select c.customer_id,c.name,count(c.customer_id) as number_of_orders	   
-from orders o
-join customers c
-on o.customer_id=c.customer_id
-group by c.customer_id
-having count(c.customer_id) >=2
-order by count(c.customer_id);
-          -------OR-------
-SELECT o.customer_id, c.name, COUNT(o.Order_id) AS ORDER_COUNT
+SELECT o.customer_id, c.name, COUNT(o.Order_id) AS number_of_orders
 FROM orders o
 JOIN customers c ON o.customer_id=c.customer_id
 GROUP BY o.customer_id, c.name
-HAVING COUNT(Order_id) >=2
-order by COUNT(o.Order_id);
+HAVING COUNT(O.Order_id) >=2;
 
 
