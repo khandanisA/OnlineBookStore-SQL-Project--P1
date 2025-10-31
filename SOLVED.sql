@@ -33,20 +33,20 @@ create table orders(Order_ID serial primary key,
 					foreign key(book_id) references books(book_id)
                    );
 
---Import Data into Books table				   
-copy
-customers(Customer_ID,Name,Email,Phone,City,Country)
-from '‪C:\Users\MD DANISH KHAN\OneDrive\Desktop\Customers.csv'
-delimiter','
-csv header;
+--Import Data into tables.
 
-copy orders(Order_ID,Customer_ID,Book_ID,Order_Date,Quantity,Total_Amount)
-from '‪C:\Users\MD DANISH KHAN\OneDrive\Desktop\Orders.csv'
+copy customers(Customer_ID, Name, Email, Phone, City, Country)
+from 'C:\Users\MD DANISH KHAN\OneDrive\Desktop\Customers.csv'
 delimiter ','
 csv header;
 
-copy books(Book_ID,Title,Author,Genre,Published_Year,Price,Stock)
-from '‪C:\Users\MD DANISH KHAN\OneDrive\Desktop\Books.csv'
+copy orders(Order_ID, Customer_ID, Book_ID, Order_Date, Quantity, Total_Amount)
+from 'C:\Users\MD DANISH KHAN\OneDrive\Desktop\Orders.csv'
+delimiter ','
+csv header;
+
+copy books(Book_ID, Title, Author, Genre, Published_Year, Price, Stock)
+from 'C:\Users\MD DANISH KHAN\OneDrive\Desktop\Books.csv'
 delimiter ','
 csv header;
 
